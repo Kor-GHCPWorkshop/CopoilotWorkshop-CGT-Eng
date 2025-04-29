@@ -1,88 +1,82 @@
-# Task 4: 도서 대출 관리 프로그램 만들기 (Part 2) 
+# Task 4: Build a Library Loan Management Program (Part 2)
 
-## Use case: 
-- Part 1에서 생성된 도서 대출 관리 프로그램에 Copilot을 활용해 단위 테스트 코드를 생성성하고, 테스트 시 에러에 대한 트러블 슈팅에 Copilot을 활용하고, Copilot을 CLI에서 활용하거나, 커밋 메세지를 자동으로 생성합니다.
+## Use case:
+- Use Copilot to generate unit test code for the library loan management program created in Part 1, troubleshoot errors during testing with Copilot, use Copilot from the CLI, or automatically generate commit messages.
 
-## 목표: 
-- Google Test를 활용해 단위 테스트를 생성합니다. 
--  에러 해결을 위해 Copilot에게 다양한 컨텍스트 추가 방법을 익힙니다. #terminalSelection, #file, #selection
-- CLI 명령어 창에서 Copilot을 활용하는 방법을 익힙니다.
-- Commit message 자동 생성기능의 활용과 Custom instruction으로 원하는 형태로 커밋 메세지 생성하는 방법을 익힙니다.
- 
+## Goal:
+- Generate unit tests using Google Test.
+- Learn various ways to provide context to Copilot for troubleshooting errors: #terminalSelection, #file, #selection
+- Learn how to use Copilot from the CLI command window.
+- Learn how to use the automatic commit message generation feature and how to generate commit messages in your desired format using custom instructions.
 
-## Step 1: 단위 테스트 생성
+## Step 1: Generate Unit Tests
 
-- Agent를 활용해 모듈 별 단위 테스트를 작성하여 각 기능의 동작을 검증합니다. <br>
+- Use Agent to write unit tests for each module and verify the operation of each function.<br>
 
-- `book 모듈에 대한 단위 테스트를 작성해줘` <br>
+- "Write unit tests for the book module."<br>
   <img src="img/01.png" width="500">
 
-- 두가지 옵션을 제안해 줍니다. <br>
-  - Option 1: Makefile에 테스트 타겟 추가 <br>
+- Two options are suggested.<br>
+  - Option 1: Add a test target to the Makefile<br>
   <img src="img/02.png" width="600">
 
-  - Option 2: CMakeLists.txt 생성 <br>
+  - Option 2: Create a CMakeLists.txt<br>
   <img src="img/03.png" width="600">
 
-
-- Option 2으로 진행하기로 하고, CMakeLists.txt파일을 생성. <br>
+- Proceed with Option 2 and create the CMakeLists.txt file.<br>
   <img src="img/04.png" width="600">
 
-- book모듈에 대해 생성된 내용을 확인합니다. <br>
+- Check the generated contents for the book module.<br>
    <img src="img/05.png" width="600">
 
+## Step 2: Use Copilot in the CLI Terminal: Ask Copilot for the Test Execution Command
+- In the CLI command window, ask Copilot for the test execution command.<br>
 
-## Step 2: CLI 명령 터미널에서 Copilot 사용: 테스트 실행 명령어 Copilot에 문의
-- CLI명령어 창에서 Copilot에게 테스트 실행 명령어를 문의해 봅니다. <br>
-
-- CLI 명령어 창에서 `Ctrl + i` 를 눌러 Copilot 명령어 창을 엽니다. <br>
+- In the CLI command window, press `Ctrl + i` to open the Copilot command window.<br>
   <img src="img/12.png" width="600">
 
-- `#file`을 입력하고, `CMakeLists.txt` 파일을 선택합니다. <br>
+- Enter `#file` and select the `CMakeLists.txt` file.<br>
   <img src="img/13.png" width="600">
 
-- `테스트 실행을 위한 윈도우 명령어` 를 입력하여 Copilot에게 문의합니다. <br>
+- Enter "Windows command for running tests" and ask Copilot.<br>
   <img src="img/14.png" width="600">
   <img src="img/15.png" width="800">
 
-## Step 3: 테스트 실행 후, 에러 메시지 해결 방법 문의
-- 테스트를 실행하고, 만약 아래 예시처럼 실패한다면, `Ask`모드에서 에러 메시지에 대한 해결을 위해 스크린 캡쳐를 사용해 문의해 봅니다. <br>
+## Step 3: After Running the Test, Ask How to Resolve Error Messages
+- Run the test, and if it fails as in the example below, use a screenshot in Ask mode to ask Copilot for help with the error message.<br>
   <img src="img/08.png" width="800">
   <img src="img/09.png" width="600">
 
-- 혹은 `Ask`모드에서 `#terminalLastCommand`을 선택하여 에러 메시지에 대한 해결을 문의합니다. <br>
+- Or, in Ask mode, select `#terminalLastCommand` to ask Copilot for help with the error message.<br>
   <img src="img/10.png" width="600">
   <img src="img/11.png" width="600">
 
-- 테스트 결과를 확인합니다. <br>
+- Check the test results.<br>
   <img src="img/16.png" width="800">
 
-## Step 4: 다른 모듈들에 대한 단위 테스트 생성하기
-- Agent를 활용해 위 Step1과 같은 방법으로 다른 모듈듈에 대한 단위 테스트도 생성해 보는 실습을 진행 합니다. <br>    
+## Step 4: Generate Unit Tests for Other Modules
+- Practice generating unit tests for other modules using Agent, just like in Step 1.<br>    
 
-
-## Step 5: Commit message 자동 생성 (Custom instruction으로 원하는 형태로 커밋 메세지 생성하기)
-- `.vscode/settings.json` 파일을 열고 아래와 같이 입력합니다.  <br>
+## Step 5: Automatic Commit Message Generation (Generate Commit Messages in Your Desired Format with Custom Instructions)
+- Open the `.vscode/settings.json` file and enter the following:<br>
   ```json
   - "github.copilot.chat.commitMessageGeneration.instructions": [
-	  {
-		  "text" : "커밋 메시지는 한글로 작성하며, 현재 시제로 작성합니다. 커밋 메시지는 변경 내용을 자세히 요약해서, 항목마다 문장 앞에 '-'를 붙여서 작성해주세요. 이모지들을 포함합니다."
-	  }
+      {
+          "text" : "Write commit messages in Korean, in present tense. Summarize the changes in detail, prefix each item with '-', and include emojis."
+      }
   ]
   ```
-  - 파일 변경내용을 저장합니다. <br>
+  - Save the file changes.<br>
  
-- git이 활성화되어 있지 않다면 활성화 하고, 변경된 파일들을 stage상태로 한 뒤, 커밋 메세지 입력 창의 우측 '`스파클`' 모양 버튼을 눌러 커밋메세지를 생성해, instructions의 지침데로 생성되는지 확인합니다. 
+- If git is not enabled, enable it, stage the changed files, and click the 'sparkle' button on the right side of the commit message input box to generate a commit message. Check if it is generated according to the instructions.
 
    <img src="img/17.png" width="400">
    <img src="img/18.png" width="400">
 
+## Knowledge Check
+- Various ways to provide context
+- Using Copilot in the CLI command window
+- Using the automatic commit message generation feature and setting instructions with custom instructions
 
-
-## 지식 확인
-- 다양한 컨텍스트 추가 방법 
-- CLI 명령어 창에서 Copilot을 활용
-- Commit message 자동 생성기능의 활용과 custom instruction으로 지침 설정
-
-## 추가자료
-- [GitHub Copilot을 활용한 Unit test생성 사용예](https://github.blog/ai-and-ml/github-copilot/how-to-generate-unit-tests-with-github-copilot-tips-and-examples/)
+## Additional Resources
+- [How to generate unit tests with GitHub Copilot: Tips and examples](https://github.blog/ai-and-ml/github-copilot/how-to-generate-unit-tests-with-github-copilot-tips-and-examples/)

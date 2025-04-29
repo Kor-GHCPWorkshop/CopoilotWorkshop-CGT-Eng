@@ -1,14 +1,14 @@
-# 새로운 모듈 생성
+# Create a New Module
 
-아래 정보를 바탕으로 C 모듈(헤더 파일과 소스 파일)을 생성해 주세요:
+Please create a C module (header file and source file) based on the information below:
 
-- 모듈 이름: {{module_name}}
-- 기능 설명: {{description}}
-- 의존성: {{dependencies}}
+- Module name: {{module_name}}
+- Description: {{description}}
+- Dependencies: {{dependencies}}
 
-다음 코딩 스타일 규칙을 따라 주세요:
-- 함수 이름은 snake_case 사용
-- 적절한 주석 포함
-- 에러 처리를 위해 성공 시 0, 실패 시 -1 반환
+Please follow these coding style rules:
+- Use snake_case for function names
+- Include appropriate comments
+- For error handling, return 0 on success and -1 on failure
 
-헤더 파일은 보호자(guard)를 포함해야 합니다.
+The header file must include an include guard.

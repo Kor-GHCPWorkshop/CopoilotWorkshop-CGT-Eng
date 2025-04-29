@@ -1,80 +1,80 @@
-# Task 2: 가위, 바위, 보 게임 만들기 (Copilot Chat사용)
+# Task 2: Create a Rock, Paper, Scissors Game (Using Copilot Chat)
 
-## Use case: 
-- GitHub Copilot를 활용하여 가위, 바위, 보 게임을 만들고, 기본 게임에 추가적인 게임 로직을 추가하는 실습을 통해, Copilot의 활용도를 높입니다.
+## Use case:
+- Use GitHub Copilot to create a Rock, Paper, Scissors game and add additional game logic to the basic game, increasing the utilization of Copilot through hands-on practice.
 
-## 목표:
-- 가위, 바위, 보 게임을 만듭니다.
-- 게임을 실행하고 게임 결과를 출력합니다.
-- 기본적인 가위, 바위, 보 게임 외에, Lizard, Spock 등의 확장판 게임을 추가합니다.
-- Copilot Chat의 `Vision` 기능을 활용하여, 그림파일을 붙여넣기 하고, 이를 기반으로 코드를 제안받아 봅니다.
-- Copilot Chat의 `Review and Comment` 기능을 활용하여, 코드에 대한 리뷰를 받아 봅니다.
-- `Review and Comment`에 Custom instruction을 제공하여, 원하는 형태로 리뷰를 받아 봅니다.
+## Goal:
+- Create a Rock, Paper, Scissors game.
+- Run the game and print the game results.
+- In addition to the basic Rock, Paper, Scissors game, add extended versions such as Lizard and Spock.
+- Use the `Vision` feature of Copilot Chat to paste an image file and get code suggestions based on it.
+- Use the `Review and Comment` feature of Copilot Chat to get a review of your code.
+- Provide custom instructions to `Review and Comment` to receive reviews in your desired format.
 
-## Step1 
-- Copilot Chat을 이용하여, 가위, 바위, 보 게임을 만들 수 있는 코드를 요청합니다.
-- 사용자가 가위,바위,보 중 하나를 선택하고, 컴퓨터와 대결하는 로직을 추가합니다.
-- 사용자가 선택한 가위, 바위, 보와 컴퓨터의 선택을 비교하여 승패를 결정하는 로직을 추가합니다.
-- 사용자가 게임을 계속할 것인지 종료할 것인지 선택할 수 있는 로직을 추가합니다.<br>
+## Step 1
+- Use Copilot Chat to request code that can create a Rock, Paper, Scissors game.
+- Add logic for the user to select one of rock, paper, or scissors and play against the computer.
+- Add logic to compare the user's choice and the computer's choice to determine the winner.
+- Add logic to allow the user to choose whether to continue or end the game.<br>
    <img src="img/01.png" alt="image" width="800"/><br>
    <img src="img/011.png" alt="image" width="800"/><br>
 
-- Copilot이 제안한 코드를 확인합니다. <br>
+- Check the code suggested by Copilot.<br>
    <img src="img/012.png" alt="image" width="800"/><br>
 
-- 컴파일 후, 게임을 실행하여 결과를 출력 받아 봅니다.<br>
+- After compiling, run the game and check the output.<br>
    <img src="img/02.png" alt="image" width="800"/><br>
 
-## Step 2 : Lizard, Spock 추가하기
-- 만들어진 게임에 추가로 Lizard, Spock의 로직을 Copilot을 활용하여 추가합니다.<br>
+## Step 2: Add Lizard, Spock
+- Use Copilot to add logic for Lizard and Spock to the created game.<br>
    <img src="img/image.png" width="600"><br>
-- `choices` 리스트에 Lizard와 Spock을 추가합니다.<br>
+- Add Lizard and Spock to the `choices` list.<br>
     <img src="img/03.png" alt="image" width="600"/><br>
 
-- Copilot Chat에 위 그림파일을 복사하여 Copilot Chat에 붙여넣기 합니다.<br>
+- Copy the image file above and paste it into Copilot Chat.<br>
     <img src="img/04.png" alt="image" width="400"/><br>
     <img src="img/05.png" alt="image" width="400"/><br>
 
-- Copilot Chat에 붙여넣기 한 그림파일 'Pasted Image'가 있음을 확인합니다.<br>
+- Check that there is a 'Pasted Image' in Copilot Chat.<br>
     <img src="img/06.png" alt="image" width="600"/><br>
 
-- Copilot Chat에 `그림파일데로 Lizard, Spock을 추가해 주세요` 라고 요청합니다.<br>
+- In Copilot Chat, request "Please add Lizard and Spock according to the image file".<br>
     <img src="img/07.png" alt="image" width="600"/><br>
 
-- Copilot Chat에서 제안된 코드를 확인합니다.<br>
+- Check the code suggested by Copilot Chat.<br>
     <img src="img/08.png" alt="image" width="900"/><br>
 
-- Copilot Chat에서 `Apply to file` 버튼을 클릭하여, 제안된 코드를 적용합니다.<br>
+- Click the `Apply to file` button in Copilot Chat to apply the suggested code.<br>
     <img src="img/09.png" alt="image" width="500"/><br>
-	<img src="img/10.png" alt="image" width="900"/><br>
+    <img src="img/10.png" alt="image" width="900"/><br>
 
-- Keep을 눌러 수정내용을 유지하고, `Ctrl+S` 를 눌러 저장합니다.<br>
-	<img src="img/101.png" alt="image" width="400"/><br>
+- Click Keep to keep the changes and press `Ctrl+S` to save.<br>
+    <img src="img/101.png" alt="image" width="400"/><br>
 
-- 필요시 미진한 코드를 추가하고 실행해 봅니다.<br>
+- If necessary, add any missing code and run it.<br>
     <img src="img/102.png" alt="image" width="800"/><br>
 
 
-## Step 3: Review and Comment 사용해 보기
-- 마우스 오른 버튼을 클릭하여, `Review and Comment` 기능을 사용하여, 코드에 대한 리뷰를 받아 봅니다.<br>
+## Step 3: Try Using Review and Comment
+- Right-click and use the `Review and Comment` feature to get a review of your code.<br>
     <img src="img/11.png" alt="image" width="700"/><br>
 
     <img src="img/12.png" alt="image" width="800"/><br>
 
-- 아래 절차데로 `Review and Comment`에 대한 `Custom instructions`을 설정해 봅니다.<br>
-  - `Ctrl + Shift + P`를 눌러서 명령 팔레트를 엽니다.<br>
-  - `Workspace settings(JSON)`을 선택합니다.<br>
+- Set up `Custom instructions` for `Review and Comment` as follows:<br>
+  - Press `Ctrl + Shift + P` to open the command palette.<br>
+  - Select `Workspace settings(JSON)`.<br>
     <img src="img/13.png" alt="image" width="600"/><br>
 
-  - JSON 파일에 아래와 옵션을 추가하고 아래 예제와 같이 입력합니다.<br>
+  - Add the following option to the JSON file and enter as in the example below.<br>
     - `"github.copilot.chat.reviewSelection.instructions"`<br>
     <img src="img/14.png" alt="image" width="600"/><br>
-    - ` "함수의 이름은 '_'로 시작하고, 변수 네이밍 규칙과 동일하게 작성합니다. 클래스와 생성자의 이름은 파스칼케이스(PascalCase)를 사용합니다. 들여쓰기는 스페이스 2개로 한다."`<br>
+    - `"Function names start with '_', and variable naming follows the same rule. Use PascalCase for class and constructor names. Use 2 spaces for indentation."`<br>
 
-   - 다시 한번 `Review and Comment` 기능을 사용하여, 코드에 대한 리뷰를 받아 봅니다.<br>
+   - Use the `Review and Comment` feature again to get a review of your code.<br>
     <img src="img/15.png" alt="image" width="800"/><br>
 
-## 지식 확인:
-- 코드 완성 기능과, Copilot Chat 기능의 차이점
-- Vision 기능으로 가능한 다른 활용법
-- Copilot Chat의 `Review and Comment` 기능과 custom instruction을 활용하여, 원하는 형태로 리뷰를 받아 보는 방법
+## Knowledge Check:
+- The difference between code completion and Copilot Chat features
+- Other possible uses of the Vision feature
+- How to use Copilot Chat's `Review and Comment` feature and custom instructions to get reviews in your desired format

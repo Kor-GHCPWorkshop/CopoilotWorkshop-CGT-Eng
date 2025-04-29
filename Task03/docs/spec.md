@@ -1,20 +1,20 @@
-# '작은 도서관' 시스템
-심플한 도서관 도서 대출/반납 및 회원 관리 시스템.
+# 'Small Library' System
+A simple library book loan/return and member management system.
 
-# 프로그램 : 작은 도서관
+# Program: Small Library
 
-# 기술 스택
+# Tech Stack
 
 - C
-- SQLite 
+- SQLite
 
-# 주요 기능:
+# Main Features:
 
-- 도서 등록, 검색, 수정, 삭제
-- 회원 관리 : 등록, 정보 수정, 연체 상태 확인인
-- 대출/반납 프로세스
-- 반납 연체관리 : 연체시 1일당 2일씩 반출 불가 처리리
-- 간단한 보고서 생성 (인기 도서, 연체 현황 등)
+- Book registration, search, update, delete
+- Member management: registration, information update, overdue status check
+- Loan/return process
+- Overdue management: If overdue, restrict borrowing for 2 days per 1 day overdue
+- Simple report generation (popular books, overdue status, etc.)
 
-# 데이터베이스 설계
-- SQLite 데이터베이스 사용
+# Database Design
+- Uses SQLite database

@@ -1,15 +1,15 @@
-# SQLite 데이터베이스 가이드 (C 기반 도서 대출 관리 프로그램)
+# SQLite Database Guide (C-based Library Loan Management Program)
 
-## 1. 데이터베이스 파일 위치
+## 1. Database File Location
 
-- 데이터베이스 파일은 프로젝트 내의 별도 디렉토리(`database/`)에 저장합니다.
-  - 예: `database/library.db`
+- Store the database file in a separate directory (`database/`) within the project.
+  - Example: `database/library.db`
 
-## 2. 테이블 설계
+## 2. Table Design
 
-다음과 같은 테이블을 사용합니다.
+Use the following tables:
 
-- **Books**: 도서 정보 저장
+- **Books**: Stores book information
   - `book_id` (INTEGER PRIMARY KEY AUTOINCREMENT)
   - `title` (TEXT NOT NULL)
   - `author` (TEXT)
@@ -18,39 +18,39 @@
   - `isbn` (TEXT UNIQUE)
   - `genre` (TEXT)
 
-- **Members**: 회원 정보 저장
+- **Members**: Stores member information
   - `member_id` (INTEGER PRIMARY KEY AUTOINCREMENT)
   - `name` (TEXT NOT NULL)
   - `phone` (TEXT)
   - `address` (TEXT)
   - `registration_date` (TEXT)
 
-- **Loans**: 도서 대출 정보 저장
+- **Loans**: Stores book loan information
   - `loan_id` (INTEGER PRIMARY KEY AUTOINCREMENT)
   - `book_id` (INTEGER, FOREIGN KEY REFERENCES Books(book_id))
   - `member_id` (INTEGER, FOREIGN KEY REFERENCES Members(member_id))
   - `loan_date` (TEXT)
   - `due_date` (TEXT)
 
-- **Returns**: 도서 반납 정보 저장
+- **Returns**: Stores book return information
   - `return_id` (INTEGER PRIMARY KEY AUTOINCREMENT)
   - `loan_id` (INTEGER, FOREIGN KEY REFERENCES Loans(loan_id))
   - `return_date` (TEXT)
 
-## 3. 데이터 타입 선택
+## 3. Data Type Selection
 
-- `TEXT`: 문자열 데이터 저장 (VARCHAR)
-- `INTEGER`: 정수 데이터 저장
-- 날짜는 `TEXT` 타입으로 저장하며, SQLite의 날짜 관련 함수를 사용하여 처리합니다.
+- `TEXT`: Stores string data (VARCHAR)
+- `INTEGER`: Stores integer data
+- Dates are stored as `TEXT` type and handled using SQLite's date-related functions.
 
-## 4. 정규화
+## 4. Normalization
 
-- 데이터 중복을 최소화하고 데이터 일관성을 유지하기 위해 정규화를 수행합니다.
-- 외래 키를 사용하여 테이블 간 관계를 명확히 합니다.
+- Perform normalization to minimize data redundancy and maintain data consistency.
+- Use foreign keys to clarify relationships between tables.
 
-## 5. 인덱싱
+## 5. Indexing
 
-다음 필드에 인덱스를 생성하여 검색 성능을 향상시킵니다.
+Create indexes on the following fields to improve search performance.
 
 ```sql
 CREATE INDEX idx_books_title ON Books(title);
@@ -59,21 +59,21 @@ CREATE INDEX idx_loans_book_id ON Loans(book_id);
 CREATE INDEX idx_loans_member_id ON Loans(member_id);
 ```
 
-## 6. 외래 키 제약 조건
-Loans.book_id는 Books(book_id)를 참조합니다.
-Loans.member_id는 Members(member_id)를 참조합니다.
-Returns.loan_id는 Loans.loan_id를 참조합니다.
+## 6. Foreign Key Constraints
+Loans.book_id references Books(book_id).
+Loans.member_id references Members(member_id).
+Returns.loan_id references Loans.loan_id.
 
-## 7. 트랜잭션 관리
-도서 대출 및 반납과 같은 데이터 변경 작업은 트랜잭션을 사용하여 데이터 일관성을 유지합니다.
+## 7. Transaction Management
+Use transactions for data modification operations such as book loans and returns to maintain data consistency.
 ```
 BEGIN TRANSACTION;
 -- SQL statements
 COMMIT;
 ```
 
-## 8. SQLite C API 사용법 예시
-다음은 SQLite C API를 사용하여 데이터베이스 연결 및 쿼리를 수행하는 예제입니다.
+## 8. Example of Using the SQLite C API
+Below is an example of connecting to the database and executing a query using the SQLite C API.
 ```
 #include <stdio.h>
 #include <sqlite3.h>
